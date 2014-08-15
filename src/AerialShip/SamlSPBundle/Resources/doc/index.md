@@ -110,12 +110,6 @@ class SSOState extends \AerialShip\SamlSPBundle\Entity\SSOStateEntity
 }
 ```
 
-After the entity class is created you should update your database schema by running
-
-``` bash
-$ php app/console doctrine:schema:update --force
-```
-
 
 Step 4: Configure SamlSpBundle
 ------------------------------
@@ -128,6 +122,12 @@ aerial_ship_saml_sp:
     driver: orm
     sso_state_entity_class: Acme\SamlBundle\Entity\SSOState
 
+```
+
+After the entity class is created and you have told the bundle where to find it you should update your database schema by running:
+
+``` bash
+$ php app/console doctrine:schema:update --force
 ```
 
 
